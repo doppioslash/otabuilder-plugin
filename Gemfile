@@ -11,3 +11,4 @@ gem "CFPropertyList"
 gem "rubyzip"
 gem "jruby-openssl", "~> 0.9.4"
 gem "ftpfxp"
+gem 'dropbox-sdk', :git => 'https://github.com/doppioslash/dropbox-sdk-ruby.git'
