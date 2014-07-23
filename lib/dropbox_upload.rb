@@ -6,9 +6,9 @@ require 'rubygems'
 require 'dropbox_sdk'
 
 module DROPBOX
-  APP_KEY = '6r0pxf0xwkbwfxi'
-  APP_SECRET = 't16ufvprm1qb1lb'
-  TOKEN = '775lpXasKnIAAAAAAAB3c2yq2QKsvYX2Rre044VVECQ7PgIRl98CHZvqewIKrAd1'
+  APP_KEY = ''
+  APP_SECRET = ''
+  TOKEN = ''
   
   def self.upload(local_path, remote_path, remote_dir, listner)
     client = DropboxClient.new(TOKEN)
