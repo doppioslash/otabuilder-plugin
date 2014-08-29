@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #Claudia Doppioslash @Starship 2014
 #Dropbox Module
 #using dropbox as ipa host
@@ -7,9 +8,9 @@ require 'dropbox_sdk'
 
 module DROPBOX
   
-  APP_KEY = '6r0pxf0xwkbwfxi'
-  APP_SECRET = 't16ufvprm1qb1lb'
-  TOKEN = '775lpXasKnIAAAAAAAB3ekdJKEVYXv_uzUOtJD4B5njWcRb9N9nv6lPv3aoxso8A'
+  APP_KEY = '...'
+  APP_SECRET = '...'
+  TOKEN = '...'
     
   def self.upload(local_path, remote_path, remote_dir, listner)
     
