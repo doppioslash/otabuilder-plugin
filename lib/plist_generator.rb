@@ -12,7 +12,7 @@ require 'plist'
 
 module Manifest
 
-  def self.create(ipa_url,image_url,bundle_identifier,bundle_version,title,build_path)
+  def self.create(ipa_url,bundle_identifier,bundle_version,title,build_path)
 
     manifest = Plist::parse_xml '<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -28,14 +28,6 @@ module Manifest
           <string>software-package</string>
           <key>url</key>
           <string>&lt;http link for ipa file&gt;</string>
-        </dict>
-        <dict>
-          <key>kind</key>
-          <string>display-image</string>
-          <key>needs-shine</key>
-          <true/>
-          <key>url</key>
-          <string>&lt;http link for image file&gt;</string>
         </dict>
       </array>
       <key>metadata</key>
@@ -58,7 +50,6 @@ module Manifest
     return nil if manifest.nil?
     
     manifest['items'][0]['assets'][0]['url'] = ipa_url
-    manifest['items'][0]['assets'][1]['url'] = image_url
     manifest['items'][0]['metadata']['bundle-identifier'] = bundle_identifier
     manifest['items'][0]['metadata']['bundle-version'] = bundle_version
     manifest['items'][0]['metadata']['title'] = title

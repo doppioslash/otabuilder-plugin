@@ -31,8 +31,8 @@ class NotificationMail<SMTP
 					boundary=Boundary;type=text/html"
 	end
 
-	def send
-		
+	def send(listner)
+		listner.info Pony
 		Pony.mail({
 				:to => @to,
 				:cc => @cc,
@@ -50,7 +50,7 @@ class NotificationMail<SMTP
 
 				:attachments => @attachments,
 
-				:headers => @headers,
+				:headers => { 'Content-Type' => 'text/html' },
 				:sender => @sender,
 				:reply_to => @reply_to,
 
@@ -58,10 +58,11 @@ class NotificationMail<SMTP
 				:via_options =>{
 					:address => @server,
 					:port    => @port,
-					:enable_starttls_auto => true,
+					:openssl_verify_mode    => OpenSSL::SSL::VERIFY_NONE,
+					:enable_starttls_auto   => false,
 					:user_name => @user_name,
 					:password => @password,
-					:authentication => :plain
+					:authentication => :login
 
 				}
 			})

@@ -2,7 +2,6 @@
 #SMTP class
 #An SMTP Mail Class With Husdon Configuration
 
-
 require "rubygems"
 require "require_relative"
 require "java"
